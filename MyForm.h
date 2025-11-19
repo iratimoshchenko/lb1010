@@ -161,9 +161,9 @@ namespace lb10 {
 			// 
 			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(-7, 283);
+			this->pictureBox1->Location = System::Drawing::Point(-7, 295);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(858, 265);
+			this->pictureBox1->Size = System::Drawing::Size(858, 253);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 7;
 			this->pictureBox1->TabStop = false;
