@@ -43,6 +43,7 @@ namespace lb10 {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::ListBox^ listBox1;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	protected:
 
 	private:
@@ -58,6 +59,7 @@ namespace lb10 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -65,6 +67,8 @@ namespace lb10 {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -134,7 +138,7 @@ namespace lb10 {
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->button3->ForeColor = System::Drawing::Color::Ivory;
-			this->button3->Location = System::Drawing::Point(187, 262);
+			this->button3->Location = System::Drawing::Point(182, 239);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(200, 38);
 			this->button3->TabIndex = 5;
@@ -148,17 +152,29 @@ namespace lb10 {
 				static_cast<System::Byte>(204)));
 			this->listBox1->FormattingEnabled = true;
 			this->listBox1->ItemHeight = 20;
-			this->listBox1->Location = System::Drawing::Point(424, 87);
+			this->listBox1->Location = System::Drawing::Point(424, 73);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(158, 244);
+			this->listBox1->Size = System::Drawing::Size(158, 204);
 			this->listBox1->TabIndex = 6;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(-7, 283);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(858, 265);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 7;
+			this->pictureBox1->TabStop = false;
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Ivory;
-			this->ClientSize = System::Drawing::Size(848, 454);
+			this->ClientSize = System::Drawing::Size(848, 549);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
@@ -168,6 +184,7 @@ namespace lb10 {
 			this->Controls->Add(this->label1);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -248,5 +265,6 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 	MessageBox::Show("Кількість голосних літер у черзі: " + count.ToString());
 }
+
 };
 }
